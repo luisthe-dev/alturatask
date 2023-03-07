@@ -1,38 +1,262 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  background: #010115;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  min-width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.nftBody {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.topHeader {
+  width: 80%;
+  margin: 10px auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #ffffff;
+  font-weight: 500;
+  gap: 12px;
+  font-family: "Tilt Neon", "Ubuntu Condensed";
+}
+
+.topHeader svg {
+  font-size: 28px;
+  color: #f4f4f4;
+  font-weight: 500;
+}
+
+.nftSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 12px auto;
+  width: 70%;
+}
+
+.nftSearch input {
+  width: 80%;
+  border-radius: 12px;
+  padding: 20px 0 20px 40px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.nftSearch button {
+  flex: 20%;
+  border-top-right-radius: 10px;
+  background: #024252;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  border: 1px solid #f4f4f4;
+}
+
+.nftSearch button:hover {
+  background: transparent;
+  border: none;
+  color: #024252;
+}
+
+.nftSearch button svg {
+  font-size: 14px;
+}
+
+.nftList {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nftList > p {
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  color: #ffffff;
+}
+
+.nftList .nftItem {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 12px;
+  border: 2px solid #ffffff;
+  margin: 20px 0;
+}
+
+.nftList .nftItem img {
+  width: 100%;
+  height: 220px;
+  aspect-ratio: 1/1;
+}
+
+.nftList .nftItem h4 {
+  color: #f1f1ff;
+  margin: 12px auto;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nftList .nftItem p {
+  font-size: 14px;
+  font-weight: 300;
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+.nftList .nftItem p label {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.nftPop {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: scale(0, 0);
+  background: #ffffff76;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.nftPop.active {
+  transform: scale(1, 1);
+}
+
+.nftPop .nftPopCard {
+  background: #010115;
+  border: 2px solid #f4f4f4;
+  border-radius: 12px;
+  padding: 50px 30px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.nftPop .nftPopCard h5 {
+  font-weight: 600;
+  font-size: 32px;
+  margin: 8px auto;
+}
+
+.nftPop .nftPopCard h6 {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 3px auto;
+}
+
+.nftPop .nftPopCard h4 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 3px auto;
+}
+
+.nftPop .nftPopCard p {
+  font-weight: 300;
+  font-size: 20px;
+  max-width: 80%;
+  margin: 12px auto;
+}
+
+@media (max-width: 1280px) {
+  .nftBody {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nftSearch {
+    width: 95%;
+  }
+
+  .nftSearch button svg {
+    font-size: 24px;
+  }
+
+  .nftSearch button span {
+    display: none;
+  }
+
+  .nftList {
+    width: 90%;
+  }
+
+  .nftList .nftItem {
+    width: 45%;
+  }
+
+  .nftList .nftItem img {
+    height: unset;
+  }
+
+  .nftPop .nftPopCard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nftBody {
+    width: 100%;
+  }
+
+  .nftSearch {
+    width: 95%;
+  }
+
+  .nftSearch button svg {
+    font-size: 24px;
+  }
+
+  .nftSearch button span {
+    display: none;
+  }
+
+  .nftList {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .nftList .nftItem {
+    width: 90%;
+  }
+
+  .nftList .nftItem img {
+    height: unset;
+  }
+
+  .nftPop .nftPopCard {
+    width: 90%;
   }
 }
